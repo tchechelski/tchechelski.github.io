@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Google</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="results.css">
 </head>
 <body>
+	<div id="wrapper" >
       <nav>
       	<a href="#">Gmail</a>
       	<a href="#">Grafika</a>
@@ -24,6 +27,8 @@
 			    <img src="images/keyb.png" class="keyboard-icon">
       			<input type="submit" class="search-btn" value="Szukaj w Google">
       			<input type="submit" class="search-btn" value="Szczęśliwy traf">
+
+
       		</div>
       	</form>
       	<div class="language">
@@ -31,6 +36,78 @@
       		<a href="#">English</a>
       	</div>
       </section>
+	  <div class="results">
+		<ul id="result_buttons">
+            <li id="active_res_btn">Wszystko</li>
+            <li>Grafika</li>
+            <li>Wideo</li>
+            <li>Zakupy</li>
+            <li>Wiadomości</li>
+            <li>Więcej</li>
+			<li>Ustawienia</li>
+			<li>Narzędzia</li>
+        </ul>
+		<hr id = "result_line" />
+		<div class="result">
+            <h2>HTML Styles CSS - W3Schools</h2>
+            <a>https://www.w3schools.com/html/html_css.asp</a> 
+            <p>Using CSS · Inline - by using the style attribute inside HTML elements · Internal - by using a</p>
+            <p>Try it Yourself! </p>
+        </div>
+
+        <div class="result">
+            <h2>CSS podstawy - Naucz się pisać strony internetowe! | MDN</h2>
+            <a>http://how2html.pl/css-podstawy/</a> 
+            <p>Kurs CSS. Podstawy CSS, nauka CSS3 za darmo. Podstawy HTML. Wejdź i dowiedz się co to</p>
+            <p>jest język CSS, czym się różni od HTML?</p>
+        </div>
+
+        <div class="result">
+            <h2>Lekcja 12: CSS podstawy - Kurs CSS / HTML - by How2HTML</h2>
+            <a>https://www.techopedia.com/definition/25629/mutual-exclusion-mutex</a> 
+            <p>A mutual exclusion (mutex) is a program object that prevents simultaneous access to a shared resource. This concept is used in concurrent programming with a critical section, a piece of code in which processes or threads access a shared resource. ... This is furnished with algorithms ...</p>
+        </div>
+		<div class="result">
+            <h2>HTML Styles CSS - W3Schools</h2>
+            <a>https://www.w3schools.com/html/html_css.asp</a> 
+            <p>Using CSS · Inline - by using the style attribute inside HTML elements · Internal - by using a</p>
+            <p>Try it Yourself! </p>
+        </div>
+
+        <div class="result">
+            <h2>CSS podstawy - Naucz się pisać strony internetowe! | MDN</h2>
+            <a>http://how2html.pl/css-podstawy/</a> 
+            <p>Kurs CSS. Podstawy CSS, nauka CSS3 za darmo. Podstawy HTML. Wejdź i dowiedz się co to</p>
+            <p>jest język CSS, czym się różni od HTML?</p>
+        </div>
+
+        <div class="result">
+            <h2>Lekcja 12: CSS podstawy - Kurs CSS / HTML - by How2HTML</h2>
+            <a>https://www.techopedia.com/definition/25629/mutual-exclusion-mutex</a> 
+            <p>A mutual exclusion (mutex) is a program object that prevents simultaneous access to a shared resource. This concept is used in concurrent programming with a critical section, a piece of code in which processes or threads access a shared resource. ... This is furnished with algorithms ...</p>
+        </div>
+		<div class="result">
+            <h2>HTML Styles CSS - W3Schools</h2>
+            <a>https://www.w3schools.com/html/html_css.asp</a> 
+            <p>Using CSS · Inline - by using the style attribute inside HTML elements · Internal - by using a</p>
+            <p>Try it Yourself! </p>
+        </div>
+
+        <div class="result">
+            <h2>CSS podstawy - Naucz się pisać strony internetowe! | MDN</h2>
+            <a>http://how2html.pl/css-podstawy/</a> 
+            <p>Kurs CSS. Podstawy CSS, nauka CSS3 za darmo. Podstawy HTML. Wejdź i dowiedz się co to</p>
+            <p>jest język CSS, czym się różni od HTML?</p>
+        </div>
+
+        <div class="result">
+            <h2>Lekcja 12: CSS podstawy - Kurs CSS / HTML - by How2HTML</h2>
+            <a>https://www.techopedia.com/definition/25629/mutual-exclusion-mutex</a> 
+            <p>A mutual exclusion (mutex) is a program object that prevents simultaneous access to a shared resource. This concept is used in concurrent programming with a critical section, a piece of code in which processes or threads access a shared resource. ... This is furnished with algorithms ...</p>
+        </div>		
+
+
+	  </div>
       <footer>
       	<h1>Polska</h1>
       	<div class="links">
@@ -47,6 +124,6 @@
       		</div>
       	</div>
       </footer>
-
+	</div>
 </body>
 </html
