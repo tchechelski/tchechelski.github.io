@@ -8,13 +8,14 @@
 	<title>Google</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="results.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-	<div id="wrapper" >
+	<div id="wrapper" v-bind:class="{ results: googleSearch.length > 0}">
       <nav>
       	<a href="#">Gmail</a>
       	<a href="#">Grafika</a>
-      	<img src="images/menu.PNG">
+      	<img src="images/menu.png">
       	<button>Zaloguj się</button>
       </nav>
       <section class="sect1">
@@ -22,11 +23,12 @@
       	<form><br><br>
       		<div class="s-box">
       			<img src="images/search.png" class="search-icon">
-      			<input type="text" class="input">
+      			<input v-model="googleSearch" type="text" class="input">
       			<img src="images/mic.png" class="mic-icon">
 			    <img src="images/keyb.png" class="keyboard-icon">
       			<input type="submit" class="search-btn" value="Szukaj w Google">
       			<input type="submit" class="search-btn" value="Szczęśliwy traf">
+
 
 
       		</div>
@@ -125,5 +127,13 @@
       	</div>
       </footer>
 	</div>
+	<script>
+		var app = new Vue({
+		  el: '#wrapper',
+		  data: {
+			googleSearch: ''
+		  }
+		})
+	  </script>
 </body>
 </html
