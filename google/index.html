@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" type="text/css" href="results.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="cities.js"></script>
 </head>
 <body>
 	<div id="wrapper" v-bind:class="{ results: googleSearch.length > 0}">
@@ -24,11 +25,13 @@
       		<div class="s-box">
       			<img src="images/search.png" class="search-icon">
       			<input v-model="googleSearch" type="text" class="input">
+                <div class="cities_list" v-for="city in filteredCities" :key="city.name">
+                    {{ city.name  }}
+                </div>
       			<img src="images/mic.png" class="mic-icon">
 			    <img src="images/keyb.png" class="keyboard-icon">
       			<input type="submit" class="search-btn" value="Szukaj w Google">
       			<input type="submit" class="search-btn" value="Szczęśliwy traf">
-
 
 
       		</div>
@@ -127,12 +130,21 @@
       	</div>
       </footer>
 	</div>
+
 	<script>
 		var app = new Vue({
 		  el: '#wrapper',
 		  data: {
-			googleSearch: ''
-		  }
+			googleSearch: '',
+            cities: window.cities
+		  },
+          computed: {
+              filteredCities() {
+                  return this.cities.filter((city) => {
+                      return city.name.toLowerCase().includes(this.googleSearch.toLowerCase());
+                  }).slice(0,10);
+              }
+          }
 		})
 	  </script>
 </body>
