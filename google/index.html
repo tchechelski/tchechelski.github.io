@@ -25,11 +25,15 @@
       		<div class="s-box">
       			<img src="images/search.png" class="search-icon">
       			<input v-model="googleSearch" type="text" class="input">
-                <div class="cities_list" v-for="city in filteredCities" :key="city.name">
-                    {{ city.name  }}
-                </div>
       			<img src="images/mic.png" class="mic-icon">
 			    <img src="images/keyb.png" class="keyboard-icon">
+                <div class="cities_list_header">
+                    <hr id = "result_line" />
+                </div>
+                <div class="cities_list" v-for="city in filteredCities" :key="city.name">
+                    {{googleSearch}}<span style="font-weight:bold" v-html="city.nameHtml"></span>
+                    
+                </div>
       			<input type="submit" class="search-btn" value="Szukaj w Google">
       			<input type="submit" class="search-btn" value="Szczęśliwy traf">
 
@@ -142,7 +146,7 @@
               filteredCities() {
                   return this.cities.filter((city) => {
                       return city.name.toLowerCase().includes(this.googleSearch.toLowerCase());
-                  }).slice(0,10);
+                  }).slice(0,10).map((city) => { city.nameHtml = city.name.replace(this.googleSearch,''); return city });
               }
           }
 		})
