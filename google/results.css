@@ -31,6 +31,14 @@
     
 }
 
+#wrapper.results span {
+    font-weight: bold;
+}
+
+#wrapper.results span.nobold {
+    font-weight: 100;
+}
+
 #wrapper.results .s-box {
     border: 1px solid #ddd;
 	color: rgba(0,0,0, 0.87);
@@ -145,7 +153,5 @@
 #result_buttons #active_res_btn {
     color: blue;
 }
-
-
 
 

@@ -31,7 +31,7 @@
                     <hr id = "result_line" />
                 </div>
                 <div class="cities_list" v-for="city in filteredCities" :key="city.name">
-                    {{googleSearch}}<span style="font-weight:bold" v-html="city.nameHtml"></span>
+                    <span v-html="highlightQuery(city.name, googleSearch)"></span>
                     
                 </div>
       			<input type="submit" class="search-btn" value="Szukaj w Google">
@@ -146,10 +146,24 @@
               filteredCities() {
                   return this.cities.filter((city) => {
                       return city.name.toLowerCase().includes(this.googleSearch.toLowerCase());
-                  }).slice(0,10).map((city) => { city.nameHtml = city.name.replace(this.googleSearch,''); return city });
+                  }).slice(0,10);
+              }},
+          methods: {
+                highlightQuery: function(name,search){
+                    if(!name){
+                        return "";
+                    }
+                    var expr = search;
+                    expr = expr.replace(/\s+/, "|",search);
+                    var regex = new RegExp(expr,"gi");
+                    return name.replace(regex, function($1){
+                        return '<span class="nobold">'+ $1 +'</span>';
+                    });
+}
+        		},
               }
-          }
-		})
+          
+		)
 	  </script>
 </body>
 </html
