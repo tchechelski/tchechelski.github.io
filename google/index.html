@@ -31,7 +31,7 @@
                     <hr id = "result_line" />
                 </div>
                 <div class="cities_list" v-for="city in filteredCities" :key="city.name">
-                    <span v-html="highlightQuery(city.name, googleSearch)"></span>
+                    <span v-html="boldName(city.name, googleSearch)"></span>
                     
                 </div>
       			<input type="submit" class="search-btn" value="Szukaj w Google">
@@ -149,7 +149,7 @@
                   }).slice(0,10);
               }},
           methods: {
-                highlightQuery: function(name,search){
+                boldName: function(name,search){
                     if(!name){
                         return "";
                     }
